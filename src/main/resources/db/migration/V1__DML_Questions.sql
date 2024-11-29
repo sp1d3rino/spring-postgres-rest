@@ -1,0 +1,2 @@
+INSERT INTO questions (id,created_at,updated_at,title, description)
+VALUES (1003,'2024-11-28 20:01:12.868','2024-11-28 20:01:12.868','insert data from flyway', 'this is a test of insert data using flyway migrate');
