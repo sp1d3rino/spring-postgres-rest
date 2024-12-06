@@ -16,7 +16,6 @@ on:
 
 jobs:
   build:
-    needs: get-runner
     runs-on: ${{needs.get-runner.outputs.RUNNER}}
     steps:
     - uses: actions/checkout@v4
