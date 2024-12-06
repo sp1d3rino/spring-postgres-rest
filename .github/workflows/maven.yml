@@ -30,7 +30,7 @@ jobs:
     - name: Docker build and push on docker.io
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: fabras/spring-postgre-rest
+        image: fabras/spring-postgres-rest:latest
         registry: docker.io
         username: ${{secrets.DOCKER_USERNAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
