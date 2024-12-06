@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: ${{needs.get-runner.outputs.RUNNER}}
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 11
