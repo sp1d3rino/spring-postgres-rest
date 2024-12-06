@@ -31,6 +31,7 @@ jobs:
       run: mvn -B package --file pom.xml
   publish:
     runs-on: ubuntu-latest
+    steps:
     - name: Docker build and push on docker.io
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
