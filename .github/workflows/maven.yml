@@ -30,6 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
   publish:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Docker build and push on docker.io
