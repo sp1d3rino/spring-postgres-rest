@@ -16,7 +16,7 @@ on:
 
 jobs:
   get-runner:
-    name: get a runner to use for this workflow
+    name: ubuntu-latest-runner101
     if: ${{ always() }}
     runs-on: ubuntu-latest
     outputs:
