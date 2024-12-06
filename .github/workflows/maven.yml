@@ -15,14 +15,6 @@ on:
     branches: [ "main" ]
 
 jobs:
-  get-runner:
-    name: ubuntu-latest-runner101
-    if: ${{ always() }}
-    runs-on: ubuntu-latest
-    outputs:
-     RUNNER: ${{ runner.name }}
-    steps:
-      - run: echo "selected runner = ${{ runner.name }}"
   build:
     needs: get-runner
     runs-on: ${{needs.get-runner.outputs.RUNNER}}
@@ -36,10 +28,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-  publish:
-    needs: build
-    runs-on: ${{needs.get-runner.outputs.RUNNER}}
-    steps:
     - name: Docker build and push on docker.io
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
