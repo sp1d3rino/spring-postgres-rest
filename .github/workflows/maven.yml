@@ -15,10 +15,17 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  get-runner:
+    name: get a runner to use for this workflow
+    if: ${{ always() }}
     runs-on: ubuntu-latest
-
+    outputs:
+     RUNNER: ${{ runner.name }}
+    steps:
+      - run: echo "selected runner = ${{ runner.name }}"
+  build:
+    needs: get-runner
+    runs-on: ${{needs.get-runner.outputs.RUNNER}}
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 11
@@ -31,7 +38,7 @@ jobs:
       run: mvn -B package --file pom.xml
   publish:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ${{needs.get-runner.outputs.RUNNER}}
     steps:
     - name: Docker build and push on docker.io
       uses: mr-smithers-excellent/docker-build-push@v4
