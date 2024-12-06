@@ -53,13 +53,9 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+ 
 
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -72,10 +68,10 @@
                 <version>7.8.1</version>
                 <configuration>
                     <url>
-                        jdbc:postgresql://192.168.1.19:5432/postgres
+                        jdbc:postgresql://${env.DATABASE_HOSTNAME}:5432/${env.DATABASE_NAME}
                     </url>
-                    <user>postgres</user>
-                    <password>Password.</password>
+                    <user>${env.DATABASE_USER}</user>
+                    <password>${env.DATABASE_PASSWORD}</password>
 
                 </configuration>
                 <dependencies>
