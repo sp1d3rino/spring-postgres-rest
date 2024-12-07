@@ -1,4 +1,4 @@
-### Spring Boot, PostgreSQL, JPA, Hibernate REST API Demo
+### Spring Boot, Flyway, PostgreSQL, JPA, Hibernate REST API Demo
 
 #### Steps to Setup
 
