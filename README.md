@@ -1,14 +1,15 @@
-### Spring Boot, Flyway, PostgreSQL, JPA, Hibernate REST API Demo
+mi### Docker, GitAction, Spring Boot, Flyway, PostgreSQL, JPA, Hibernate REST API Demo
 
 #### Steps to Setup
 
 __1. Clone the repository__
 
-`git clone https://gitlab.com/hendisantika/spring-boot-postgresql.git`
+`git clone https://github.com/sp1d3rino/spring-postgres-rest.git`
 
 __2. Configure PostgreSQL__
 
-First, create a database named postgres_demo. Then, open src/main/resources/application.properties file and change the spring datasource username and password as per your PostgreSQL installation.
+First, create a database named postgres. Export database env variable that match those in src/main/resources/application.properties.
+
 
 __3. Run the app__
 
